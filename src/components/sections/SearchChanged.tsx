@@ -1,9 +1,11 @@
+import { SparkleDecor } from "@/components/SparkleDecor";
 import { SectionHeading, SectionLabel, SectionShell } from "@/components/ui";
 
 export function SearchChanged() {
   return (
     <SectionShell className="bg-white">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="relative mx-auto max-w-3xl text-center">
+        <SparkleDecor className="pointer-events-none absolute -right-4 -top-2 hidden h-10 w-10 md:block lg:-right-8" />
         <SectionLabel>The shift</SectionLabel>
         <SectionHeading className="mb-10">
           Your customers have changed the way they search.
@@ -20,7 +22,8 @@ export function SearchChanged() {
             website.
           </p>
 
-          <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-brand-purple/10 bg-brand-purple-pale/50 px-8 py-10">
+          <div className="relative mx-auto mt-10 max-w-xl rounded-3xl border border-brand-purple/10 bg-brand-purple-pale/50 px-8 py-10">
+            <SparkleDecor className="pointer-events-none absolute -left-3 -top-3 h-8 w-8" />
             <p className="text-lg font-semibold text-brand-purple">
               So the real question is:
             </p>

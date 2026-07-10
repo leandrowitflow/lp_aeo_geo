@@ -1,5 +1,5 @@
-import { Button, SectionHeading } from "@/components/ui";
-import { Sparkles } from "@/components/Sparkles";
+import { Button, Container, SectionHeading } from "@/components/ui";
+import { SparkleDecor } from "@/components/SparkleDecor";
 
 export function FinalCTA() {
   return (
@@ -12,26 +12,29 @@ export function FinalCTA() {
         className="pointer-events-none absolute -bottom-10 -right-10 h-80 w-80 rounded-full bg-white/5 blur-3xl"
         aria-hidden="true"
       />
-      <Sparkles className="pointer-events-none absolute right-16 top-12 h-8 w-8 text-brand-yellow opacity-80" />
+      <SparkleDecor className="pointer-events-none absolute right-16 top-12 h-10 w-10 opacity-90" />
 
-      <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-10">
-        <SectionHeading className="mb-5 text-white">
-          Your customers have already changed the way they search.
-        </SectionHeading>
+      <Container className="relative">
+        <div className="relative mx-auto max-w-3xl text-center">
+          <SparkleDecor className="pointer-events-none absolute -left-6 top-8 hidden h-8 w-8 md:block" />
+          <SectionHeading className="mb-5 text-white">
+            Your customers have already changed the way they search.
+          </SectionHeading>
 
-        <p className="mb-6 text-2xl font-extrabold md:text-[2rem]">
-          Has your website changed with them?
-        </p>
+          <p className="mb-6 text-2xl font-extrabold md:text-[2rem]">
+            Has your website changed with them?
+          </p>
 
-        <p className="mb-12 text-lg leading-relaxed text-white/75">
-          Reserve your place today and discover how to prepare your business for
-          the next generation of search.
-        </p>
+          <p className="mb-12 text-lg leading-relaxed text-white/75">
+            Reserve your place today and discover how to prepare your business
+            for the next generation of search.
+          </p>
 
-        <Button href="#register" variant="ghost">
-          Reserve your place for free
-        </Button>
-      </div>
+          <Button href="#register" variant="ghost">
+            Reserve your place for free
+          </Button>
+        </div>
+      </Container>
     </section>
   );
 }

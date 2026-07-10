@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { MagnifyingGlassDivider } from "@/components/MagnifyingGlassDivider";
 import { Hero } from "@/components/sections/Hero";
 import { SearchChanged } from "@/components/sections/SearchChanged";
 import { Questions } from "@/components/sections/Questions";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <MagnifyingGlassDivider />
         <SearchChanged />
         <Questions />
         <Takeaways />

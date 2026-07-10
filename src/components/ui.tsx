@@ -1,4 +1,16 @@
-import { Sparkles } from "./Sparkles";
+import { SparkleDecor } from "./SparkleDecor";
+
+export const containerClass =
+  "mx-auto w-full max-w-[1600px] px-6 md:px-10 lg:px-14";
+
+type ContainerProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+export function Container({ children, className = "" }: ContainerProps) {
+  return <div className={`${containerClass} ${className}`}>{children}</div>;
+}
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -75,8 +87,7 @@ export function SparkleHeading({
   return (
     <span className={`relative inline-block ${className}`}>
       {children}
-      <Sparkles className="absolute -right-7 -top-3 h-5 w-5 text-brand-yellow md:-right-9 md:-top-4 md:h-7 md:w-7" />
-      <Sparkles className="absolute -right-12 top-1 h-3 w-3 text-brand-yellow-light md:-right-16 md:top-0 md:h-4 md:w-4" />
+      <SparkleDecor className="absolute -right-10 -top-4 h-8 w-8 md:-right-12 md:-top-5 md:h-10 md:w-10" />
     </span>
   );
 }
@@ -92,7 +103,7 @@ export function SectionShell({
 }) {
   return (
     <section id={id} className={`py-20 md:py-28 lg:py-32 ${className}`}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">{children}</div>
+      <Container>{children}</Container>
     </section>
   );
 }

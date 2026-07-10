@@ -1,3 +1,4 @@
+import { SparkleDecor } from "@/components/SparkleDecor";
 import { SectionHeading, SectionLabel, SectionShell } from "@/components/ui";
 
 const questions = [
@@ -12,7 +13,8 @@ export function Questions() {
   return (
     <SectionShell className="bg-brand-gray">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-12 text-center">
+        <div className="relative mb-12 text-center">
+          <SparkleDecor className="pointer-events-none absolute right-0 top-0 hidden h-9 w-9 sm:block" />
           <SectionLabel>What we&apos;ll cover</SectionLabel>
           <SectionHeading>
             In this talk, we&apos;ll answer the questions many businesses still
