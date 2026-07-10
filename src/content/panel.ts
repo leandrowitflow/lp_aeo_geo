@@ -13,13 +13,19 @@ export const panelContent = {
       name: "José Carvalho",
       role: "CXO & UI Designer",
       company: "Flow Productions",
-      photo: "/images/panel/jose.png",
+      photo: "/images/panel/jose.jpeg",
     },
     {
       name: "Mariana Rocha",
       role: "Head of Marketing & Communications",
       company: "Flow Productions",
-      photo: "/images/panel/mariana.png",
+      photo: "/images/panel/mariana.jpeg",
+    },
+    {
+      name: "Jessica Costa",
+      role: "Executive Director",
+      company: "Algarve STP",
+      photo: "/images/panel/jessica.jpeg",
     },
   ],
 } as const;

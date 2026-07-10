@@ -17,10 +17,10 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[#f6f6f7]">
-      <Container className="relative py-16 sm:py-20 lg:min-h-[900px] lg:py-24 xl:min-h-[980px]">
-        <div className="relative grid items-center gap-12 lg:grid-cols-[minmax(0,0.96fr)_minmax(460px,1.04fr)] lg:gap-4 xl:gap-12">
-          <div className="relative z-10 animate-fade-up">
-            <h1 className="max-w-[760px] text-[clamp(2.65rem,4.7vw,5.8rem)] font-extrabold leading-[1.04] tracking-[-0.055em] text-brand-purple">
+      <Container className="relative pt-16 pb-14 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-20">
+        <div className="relative grid items-start gap-12 lg:grid-cols-[minmax(0,0.96fr)_minmax(460px,1.04fr)] lg:gap-4 xl:gap-12">
+          <div className="relative z-10 animate-fade-up lg:pt-12">
+            <h1 className="max-w-[760px] text-[clamp(2.65rem,4.7vw,5.8rem)] font-bold leading-[1.04] tracking-[-0.055em] text-brand-purple">
               {h1.split("AI").map((part, i, arr) =>
                 i < arr.length - 1 ? (
                   <span key={i}>
