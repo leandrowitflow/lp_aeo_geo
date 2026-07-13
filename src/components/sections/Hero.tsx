@@ -56,7 +56,7 @@ export function Hero() {
             </div>
 
             <div className="mt-9">
-              <Button href="#register" className="min-w-56 px-8 py-4">
+              <Button href="#flowi" className="min-w-56 px-8 py-4">
                 {cta}
               </Button>
             </div>

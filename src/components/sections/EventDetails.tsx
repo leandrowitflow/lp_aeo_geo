@@ -36,7 +36,9 @@ export function EventDetails() {
             ))}
           </ul>
 
-          <Button href="#flowi">Reserve your place for free</Button>
+          <Button href="https://luma.com/i9pt1a6j">
+            Reserve your place for free
+          </Button>
         </div>
       </div>
     </SectionShell>

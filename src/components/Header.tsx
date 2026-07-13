@@ -10,7 +10,10 @@ export function Header() {
         <a href="#" className="flex items-center">
           <Logo priority className="h-9 w-auto sm:h-10" />
         </a>
-        <Button href="#register" className="hidden px-6 py-2.5 text-xs sm:inline-flex">
+        <Button
+          href="https://luma.com/i9pt1a6j"
+          className="hidden px-6 py-2.5 text-xs sm:inline-flex"
+        >
           Reserve your place
         </Button>
       </div>

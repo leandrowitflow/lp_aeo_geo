@@ -10,7 +10,7 @@ export const heroContent = {
       { icon: "location", label: "UAlg TEC Campus" },
     ],
   },
-  cta: "Reserve your place",
+  cta: "Talk to Flowi",
 } as const;
 
 export type HeroEventIcon =
