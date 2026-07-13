@@ -9,10 +9,7 @@ type PanelPersonCardProps = {
 };
 
 function PanelPersonCard({ person, badge }: PanelPersonCardProps) {
-  const photoFocus =
-    "photoFocus" in person
-      ? person.photoFocus
-      : { scale: 1.2, objectPosition: "50% 22%" };
+  const photoFocus = "photoFocus" in person ? person.photoFocus : null;
 
   return (
     <article className="group text-center">
@@ -22,13 +19,17 @@ function PanelPersonCard({ person, badge }: PanelPersonCardProps) {
           alt={person.name}
           fill
           sizes="(max-width: 640px) 50vw, 480px"
-          quality={90}
-          className="object-cover"
-          style={{
-            objectPosition: photoFocus.objectPosition,
-            transform: `scale(${photoFocus.scale})`,
-            transformOrigin: photoFocus.objectPosition,
-          }}
+          quality={92}
+          className={photoFocus ? "object-cover" : "object-cover object-top"}
+          style={
+            photoFocus
+              ? {
+                  objectPosition: photoFocus.objectPosition,
+                  transform: `scale(${photoFocus.scale})`,
+                  transformOrigin: photoFocus.objectPosition,
+                }
+              : undefined
+          }
         />
       </div>
 

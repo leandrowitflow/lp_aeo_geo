@@ -9,7 +9,6 @@ export const panelContent = {
     role: "Executive Director",
     company: "Algarve STP",
     photo: "/images/panel/jessica.jpeg",
-    photoFocus: { scale: 1, objectPosition: "50% 38%" },
   },
   speakers: {
     label: "Speakers",
@@ -25,24 +24,17 @@ export const panelContent = {
         name: "José Carvalho",
         role: "CXO & UI Designer",
         company: "Flow Productions",
-        photo: "/images/panel/jose.jpeg",
-        photoFocus: { scale: 1.65, objectPosition: "50% 30%" },
+        photo: "/images/panel/jose-normalized.jpg",
       },
       {
         name: "Mariana Rocha",
         role: "Head of Marketing & Communications",
         company: "Flow Productions",
-        photo: "/images/panel/mariana.jpeg",
-        photoFocus: { scale: 1.55, objectPosition: "50% 24%" },
+        photo: "/images/panel/mariana-normalized.jpg",
       },
     ],
   },
 } as const;
-
-export type PanelPhotoFocus = {
-  scale: number;
-  objectPosition: string;
-};
 
 export type PanelPerson =
   | typeof panelContent.host
