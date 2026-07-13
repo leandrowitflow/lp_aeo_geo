@@ -7,6 +7,7 @@ import { Takeaways } from "@/components/sections/Takeaways";
 import { PanelDiscussion } from "@/components/sections/PanelDiscussion";
 import { EventDetails } from "@/components/sections/EventDetails";
 import { Flowi } from "@/components/sections/Flowi";
+import { FlowiAgentSection } from "@/components/sections/FlowiAgentSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -25,6 +26,7 @@ export default function Home() {
         <EventDetails />
         <Flowi />
         <FAQ />
+        <FlowiAgentSection />
         <FinalCTA />
       </main>
       <Footer />

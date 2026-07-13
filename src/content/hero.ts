@@ -1,5 +1,5 @@
 export const heroContent = {
-  h1: "Why Isn't AI Recommending Your Business?",
+  h1: "If AI Doesn't Recommend You, Who Will?",
   subtitle:
     "Discover how to prepare your website to be found, understood and recommended by search engines and AI-powered platforms.",
   eventInformation: {

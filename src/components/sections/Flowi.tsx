@@ -3,7 +3,7 @@ import { FlowiOrb } from "@/components/illustrations";
 
 export function Flowi() {
   return (
-    <SectionShell id="flowi" className="bg-white">
+    <SectionShell className="bg-white">
       <div className="mx-auto max-w-3xl text-center">
         <FlowiOrb />
         <SectionHeading className="mb-5">Still have questions?</SectionHeading>
