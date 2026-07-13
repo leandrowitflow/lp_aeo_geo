@@ -1,10 +1,44 @@
 import Image from "next/image";
 import { SparkleDecor } from "@/components/SparkleDecor";
-import { SectionHeading, SectionShell } from "@/components/ui";
-import { panelContent } from "@/content/panel";
+import { SectionHeading, SectionLabel, SectionShell } from "@/components/ui";
+import { panelContent, type PanelPerson } from "@/content/panel";
+
+type PanelPersonCardProps = {
+  person: PanelPerson;
+  badge?: string;
+};
+
+function PanelPersonCard({ person, badge }: PanelPersonCardProps) {
+  return (
+    <article className="group text-center">
+      <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[240px] overflow-hidden rounded-[1.75rem] shadow-xl shadow-brand-purple/15 transition-transform duration-300 group-hover:-translate-y-1">
+        <Image
+          src={person.photo}
+          alt={person.name}
+          fill
+          sizes="(max-width: 640px) 50vw, 480px"
+          quality={90}
+          className="object-cover object-top"
+        />
+      </div>
+
+      {badge ? (
+        <p className="mb-2 inline-flex rounded-full bg-brand-purple px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white">
+          {badge}
+        </p>
+      ) : null}
+
+      <h3 className="text-xl font-extrabold text-brand-purple">{person.name}</h3>
+      <p className="mt-1.5 text-sm font-semibold leading-snug text-brand-text-muted">
+        {person.role}
+      </p>
+      <p className="text-sm text-brand-purple-light">{person.company}</p>
+    </article>
+  );
+}
 
 export function PanelDiscussion() {
-  const { heading, description, speakers } = panelContent;
+  const { heading, description, host, speakers } = panelContent;
 
   return (
     <SectionShell className="bg-brand-gray-warm">
@@ -16,28 +50,23 @@ export function PanelDiscussion() {
           {description}
         </p>
 
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {speakers.map((speaker) => (
-            <article key={speaker.name} className="group text-center">
-              <div className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[240px] overflow-hidden rounded-[1.75rem] shadow-xl shadow-brand-purple/15 transition-transform duration-300 group-hover:-translate-y-1">
-                <Image
-                  src={speaker.photo}
-                  alt={speaker.name}
-                  fill
-                  sizes="(max-width: 640px) 50vw, 480px"
-                  quality={90}
-                  className="object-cover object-top"
-                />
-              </div>
-              <h3 className="text-xl font-extrabold text-brand-purple">
-                {speaker.name}
-              </h3>
-              <p className="mt-1.5 text-sm font-semibold leading-snug text-brand-text-muted">
-                {speaker.role}
-              </p>
-              <p className="text-sm text-brand-purple-light">{speaker.company}</p>
-            </article>
-          ))}
+        <div className="mx-auto max-w-md">
+          <SectionLabel>{host.label}</SectionLabel>
+          <p className="mb-8 text-sm leading-relaxed text-brand-text-muted md:text-base">
+            {host.note}
+          </p>
+          <PanelPersonCard person={host} badge={host.label} />
+        </div>
+
+        <div className="mx-auto my-14 h-px w-full max-w-3xl bg-brand-purple/15" />
+
+        <div>
+          <SectionLabel className="mb-10">{speakers.label}</SectionLabel>
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+            {speakers.people.map((speaker) => (
+              <PanelPersonCard key={speaker.name} person={speaker} />
+            ))}
+          </div>
         </div>
       </div>
     </SectionShell>
