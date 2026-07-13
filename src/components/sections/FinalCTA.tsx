@@ -30,7 +30,7 @@ export function FinalCTA() {
             for the next generation of search.
           </p>
 
-          <Button href="#register" variant="ghost">
+          <Button href="https://luma.com/i9pt1a6j" variant="ghost">
             Reserve your place for free
           </Button>
         </div>
