@@ -1,7 +1,7 @@
 import { SparkleDecor } from "./SparkleDecor";
 
 export const containerClass =
-  "mx-auto w-full max-w-[1600px] px-6 md:px-10 lg:px-14";
+  "mx-auto w-full max-w-[1600px] px-4 md:px-10 lg:px-14";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -26,7 +26,7 @@ export function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-9 py-4 text-[15px] font-bold tracking-wide transition-all duration-300";
+    "inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-bold tracking-wide transition-all duration-300 sm:px-9 sm:py-4 sm:text-[15px]";
   const variants = {
     primary:
       "bg-brand-purple text-white shadow-xl shadow-brand-purple/30 hover:-translate-y-0.5 hover:bg-brand-purple-dark hover:shadow-brand-purple/40",

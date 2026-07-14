@@ -12,9 +12,10 @@ export function Header() {
         </a>
         <Button
           href="https://luma.com/i9pt1a6j"
-          className="hidden px-6 py-2.5 text-xs sm:inline-flex"
+          className="px-3 py-2 text-[11px] sm:px-6 sm:py-2.5 sm:text-xs"
         >
-          Reserve your place
+          <span className="sm:hidden">Register</span>
+          <span className="hidden sm:inline">Reserve your place</span>
         </Button>
       </div>
     </header>

@@ -31,7 +31,8 @@ export function FinalCTA() {
           </p>
 
           <Button href="https://luma.com/i9pt1a6j" variant="ghost">
-            Reserve your place for free
+            <span className="sm:hidden">Register free</span>
+            <span className="hidden sm:inline">Reserve your place for free</span>
           </Button>
         </div>
       </Container>

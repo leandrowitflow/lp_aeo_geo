@@ -323,46 +323,50 @@ function FlowiAgentPanel() {
   }, [appendMessage, conversation, isConnected, textMessage]);
 
   return (
-    <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-brand-purple/10 bg-white shadow-2xl shadow-brand-purple/15">
-      <div className="bg-gradient-to-r from-brand-purple via-brand-purple-deep to-brand-purple-dark px-5 py-5 text-white md:px-7">
-        <div className="flex items-center gap-4">
-          <div className="relative shrink-0">
-            <div
-              className={`absolute -inset-1 rounded-full bg-white/20 ${
-                isConnected && !conversation.isSpeaking && !isAssistantPaused
-                  ? "animate-pulse"
-                  : ""
-              }`}
-              aria-hidden="true"
-            />
-            <Image
-              src="/images/flowi-avatar.png"
-              alt="Flowi"
-              width={64}
-              height={64}
-              className="relative h-16 w-16 rounded-full border-2 border-white/70 object-cover shadow-lg"
-            />
-          </div>
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-brand-purple/10 bg-white shadow-2xl shadow-brand-purple/15 sm:rounded-[2rem]">
+      <div className="bg-gradient-to-r from-brand-purple via-brand-purple-deep to-brand-purple-dark px-4 py-4 text-white sm:px-7 sm:py-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="flex min-w-0 flex-1 items-center gap-3 sm:gap-4">
+            <div className="relative shrink-0">
+              <div
+                className={`absolute -inset-1 rounded-full bg-white/20 ${
+                  isConnected && !conversation.isSpeaking && !isAssistantPaused
+                    ? "animate-pulse"
+                    : ""
+                }`}
+                aria-hidden="true"
+              />
+              <Image
+                src="/images/flowi-avatar.png"
+                alt="Flowi"
+                width={64}
+                height={64}
+                className="relative h-12 w-12 rounded-full border-2 border-white/70 object-cover shadow-lg sm:h-16 sm:w-16"
+              />
+            </div>
 
-          <div className="min-w-0 flex-1 text-left">
-            <p className="text-lg font-bold">{flowiAgentConfig.name}</p>
-            <p className="text-sm text-white/80">
-              {statusLabel(
-                conversation.status,
-                conversation.isSpeaking,
-                conversation.isMuted,
-                isAssistantPaused,
-              )}
-            </p>
+            <div className="min-w-0 flex-1 text-left">
+              <p className="text-base font-bold sm:text-lg">
+                {flowiAgentConfig.name}
+              </p>
+              <p className="truncate text-xs text-white/80 sm:text-sm">
+                {statusLabel(
+                  conversation.status,
+                  conversation.isSpeaking,
+                  conversation.isMuted,
+                  isAssistantPaused,
+                )}
+              </p>
+            </div>
           </div>
 
           {isActive ? (
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="flex shrink-0 items-center justify-end gap-2">
               <button
                 type="button"
                 onClick={handleToggleAssistantPause}
                 disabled={!isConnected}
-                className={`inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-wide transition disabled:cursor-not-allowed disabled:opacity-50 ${
+                className={`inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide transition disabled:cursor-not-allowed disabled:opacity-50 sm:gap-1.5 sm:px-4 sm:py-2 sm:text-xs ${
                   isAssistantPaused
                     ? "border-white bg-white text-brand-purple hover:bg-white/90"
                     : "border-white/30 bg-white/10 text-white hover:bg-white/20"
@@ -372,12 +376,14 @@ function FlowiAgentPanel() {
                 }
               >
                 <PauseBadge paused={isAssistantPaused} />
-                {isAssistantPaused ? "Resume" : "Pause"}
+                <span className="hidden min-[400px]:inline">
+                  {isAssistantPaused ? "Resume" : "Pause"}
+                </span>
               </button>
               <button
                 type="button"
                 onClick={handleEnd}
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/20"
+                className="rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white transition hover:bg-white/20 sm:px-4 sm:py-2 sm:text-xs"
               >
                 End
               </button>
@@ -387,8 +393,8 @@ function FlowiAgentPanel() {
       </div>
 
       {!isActive ? (
-        <div className="px-6 py-10 text-center md:px-10">
-          <p className="text-2xl font-extrabold text-brand-purple">
+        <div className="px-4 py-8 text-center sm:px-6 sm:py-10 md:px-10">
+          <p className="text-xl font-extrabold text-brand-purple sm:text-2xl">
             Your AI event assistant
           </p>
           <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-brand-text-muted md:text-base">
@@ -397,11 +403,11 @@ function FlowiAgentPanel() {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-purple-pale px-4 py-2 text-sm font-semibold text-brand-purple">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-purple-pale px-3 py-1.5 text-xs font-semibold text-brand-purple sm:px-4 sm:py-2 sm:text-sm">
               <MicBadge />
               Voice
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-purple-pale px-4 py-2 text-sm font-semibold text-brand-purple">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-purple-pale px-3 py-1.5 text-xs font-semibold text-brand-purple sm:px-4 sm:py-2 sm:text-sm">
               <KeyboardBadge />
               Text
             </span>
@@ -410,9 +416,10 @@ function FlowiAgentPanel() {
           <button
             type="button"
             onClick={handleStart}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-purple px-10 py-4 text-sm font-bold tracking-wide text-white shadow-lg shadow-brand-purple/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-purple-dark"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-purple px-4 py-2 text-xs font-bold tracking-wide text-white shadow-lg shadow-brand-purple/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-purple-dark sm:px-10 sm:py-4 sm:text-sm"
           >
-            Start conversation
+            <span className="sm:hidden">Start chat</span>
+            <span className="hidden sm:inline">Start conversation</span>
           </button>
         </div>
       ) : (
@@ -458,25 +465,25 @@ function FlowiAgentPanel() {
             )}
           </div>
 
-          <div className="border-t border-brand-purple/10 bg-white px-4 py-4 md:px-6">
-            <div className="mb-3 flex items-center justify-between gap-3">
+          <div className="border-t border-brand-purple/10 bg-white px-3 py-3 sm:px-4 sm:py-4 md:px-6">
+            <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
               <VoiceVisualizer
                 active={isConnected && !conversation.isMuted && !isAssistantPaused}
                 speaking={conversation.isSpeaking && !isAssistantPaused}
               />
-              <p className="text-xs font-medium text-brand-text-muted">
+              <p className="text-center text-[11px] font-medium text-brand-text-muted sm:text-left sm:text-xs">
                 {isConnected
                   ? isAssistantPaused
-                    ? "Flowi is paused — resume to hear replies"
+                    ? "Flowi is paused"
                     : conversation.isMuted
-                      ? "Unmute to talk, or keep typing"
-                      : "Speak anytime, or type below"
+                      ? "Unmute to talk, or type"
+                      : "Speak or type below"
                   : "Connecting..."}
               </p>
             </div>
 
             <form
-              className="flex items-end gap-2"
+              className="flex min-w-0 items-end gap-2"
               onSubmit={(event) => {
                 event.preventDefault();
                 handleSendMessage();
@@ -486,7 +493,7 @@ function FlowiAgentPanel() {
                 <button
                   type="button"
                   onClick={() => conversation.setMuted(!conversation.isMuted)}
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border transition ${
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border transition sm:h-12 sm:w-12 ${
                     conversation.isMuted
                       ? "border-brand-purple/20 bg-brand-gray text-brand-text-muted"
                       : "border-brand-purple/20 bg-brand-purple-pale text-brand-purple hover:border-brand-purple"
@@ -513,7 +520,7 @@ function FlowiAgentPanel() {
                     ? "Type your message..."
                     : "Waiting for connection..."
                 }
-                className="min-h-12 max-h-28 flex-1 resize-none rounded-2xl border border-brand-purple/15 bg-brand-gray/50 px-4 py-3 text-sm text-brand-text outline-none transition focus:border-brand-purple disabled:cursor-not-allowed disabled:opacity-60"
+                className="min-h-10 max-h-28 min-w-0 flex-1 resize-none overflow-hidden rounded-2xl border border-brand-purple/15 bg-brand-gray/50 px-3 py-2.5 text-sm text-brand-text outline-none transition focus:border-brand-purple disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-12 sm:px-4 sm:py-3"
                 onKeyDown={(event) => {
                   if (event.key === "Enter" && !event.shiftKey) {
                     event.preventDefault();
@@ -525,7 +532,7 @@ function FlowiAgentPanel() {
               <button
                 type="submit"
                 disabled={!isConnected || !textMessage.trim()}
-                className="flex h-12 shrink-0 items-center justify-center rounded-2xl bg-brand-purple px-5 text-sm font-bold text-white transition hover:bg-brand-purple-dark disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex h-10 shrink-0 items-center justify-center rounded-2xl bg-brand-purple px-3 text-xs font-bold text-white transition hover:bg-brand-purple-dark disabled:cursor-not-allowed disabled:opacity-50 sm:h-12 sm:px-5 sm:text-sm"
               >
                 Send
               </button>

@@ -22,11 +22,11 @@ export function EventDetails() {
         <SectionHeading className="mb-14 text-center">Event Details</SectionHeading>
 
         <div className="flex flex-col items-center gap-14">
-          <ul className="flex w-fit max-w-full flex-wrap items-center justify-center gap-x-6 gap-y-4 md:gap-x-8 lg:flex-nowrap lg:gap-x-10">
+          <ul className="mx-auto flex w-full max-w-md flex-col gap-4 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 md:gap-x-8 lg:flex-nowrap lg:gap-x-10">
             {details.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="flex items-center gap-4 text-base font-semibold text-brand-purple md:text-lg"
+                className="flex w-full items-center gap-3 text-sm font-semibold text-brand-purple sm:w-auto sm:gap-4 sm:text-base md:text-lg"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm">
                   <Icon className="h-5 w-5 text-brand-purple" />
@@ -37,7 +37,8 @@ export function EventDetails() {
           </ul>
 
           <Button href="https://luma.com/i9pt1a6j">
-            Reserve your place for free
+            <span className="sm:hidden">Register free</span>
+            <span className="hidden sm:inline">Reserve your place for free</span>
           </Button>
         </div>
       </div>
