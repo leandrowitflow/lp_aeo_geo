@@ -416,7 +416,7 @@ function FlowiAgentPanel() {
           <button
             type="button"
             onClick={handleStart}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-purple px-4 py-2 text-xs font-bold tracking-wide text-white shadow-lg shadow-brand-purple/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-purple-dark sm:px-10 sm:py-4 sm:text-sm"
+            className="mt-8 inline-flex cursor-pointer items-center justify-center rounded-full bg-brand-yellow px-4 py-2 text-xs font-bold tracking-wide text-black shadow-lg shadow-brand-yellow/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e6b415] hover:shadow-brand-yellow/40 sm:px-10 sm:py-4 sm:text-sm"
           >
             <span className="sm:hidden">Start chat</span>
             <span className="hidden sm:inline">Start conversation</span>
