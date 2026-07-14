@@ -6,6 +6,7 @@ import { Questions } from "@/components/sections/Questions";
 import { Takeaways } from "@/components/sections/Takeaways";
 import { PanelDiscussion } from "@/components/sections/PanelDiscussion";
 import { EventDetails } from "@/components/sections/EventDetails";
+import { Partners } from "@/components/sections/Partners";
 import { Flowi } from "@/components/sections/Flowi";
 import { FlowiAgentSection } from "@/components/sections/FlowiAgentSection";
 import { FAQ } from "@/components/sections/FAQ";
@@ -24,6 +25,7 @@ export default function Home() {
         <Takeaways />
         <PanelDiscussion />
         <EventDetails />
+        <Partners />
         <Flowi />
         <FAQ />
         <FlowiAgentSection />

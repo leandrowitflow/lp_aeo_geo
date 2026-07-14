@@ -17,7 +17,7 @@ const details = [
 
 export function EventDetails() {
   return (
-    <SectionShell id="register" className="bg-brand-gray">
+    <SectionShell id="register" className="bg-white">
       <div className="mx-auto max-w-6xl">
         <SectionHeading className="mb-14 text-center">Event Details</SectionHeading>
 
